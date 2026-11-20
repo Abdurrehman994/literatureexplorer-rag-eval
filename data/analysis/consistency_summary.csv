@@ -1,0 +1,9 @@
+id,first_behaviour,same_chunks_all_runs,identical_answers_all_runs,distinct_answers
+Q003,answered,True,False,3
+Q012,answered,True,True,1
+Q047,answered,True,False,2
+Q022,answered,True,False,3
+Q001,abstained,True,True,1
+Q073,abstained,True,False,3
+Q043,abstained,True,True,1
+Q002,abstained,True,True,1

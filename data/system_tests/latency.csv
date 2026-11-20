@@ -1,0 +1,25 @@
+﻿kind,question_chars,status,latency_s,timestamp,prompt_tokens,completion_tokens,answer,possibly_cold
+short,13,200,3.762,2026-11-20T13:48:11.041468+00:00,1613,135,HyDE (Hypothetical Document Embedding) is a novel approach to query transformation that generates hypothetical documents based on user queries. These ,True
+short,13,200,2.077,2026-11-20T13:48:13.121467+00:00,1524,116,DSPy is a programming model that aims to optimize language model (LM) pipelines by translating string-based prompting techniques into declarative modu,False
+short,21,200,1.668,2026-11-20T13:48:14.792591+00:00,1666,95,AgentBreeder is an evolutionary open-ended framework capable of generating large populations of diverse multi-agent scaffolds. It uses multi-objective,False
+short,15,200,1.929,2026-11-20T13:48:16.723878+00:00,1757,143,"G-Eval is a prompt-based evaluator for natural language generation (NLG) tasks, such as text summarization and dialogue response generation. It consis",False
+short,20,200,2.069,2026-11-20T13:48:18.796665+00:00,1612,135,SkillsBench is a benchmark designed to measure the efficacy of agent skills across diverse tasks. It evaluates how well agent skills work by comparing,False
+long,483,200,3.397,2026-11-20T13:48:22.197702+00:00,1636,378,"Here is a summary of the relevant papers and their proposals:
+
+**Paper 1: ""On the Theoretical Limitations of Embedding-Based Retrieval""**
+
+This paper ",False
+long,475,200,4.186,2026-11-20T13:48:26.386226+00:00,1714,556,"Based on the context provided, here is a detailed explanation of the relevant papers and the DSPy approach:
+
+**Relevant Papers:**
+
+1. [1] This paper d",False
+long,502,200,4.21,2026-11-20T13:48:30.599944+00:00,1698,552,"Based on the context provided, the relevant paper that addresses the issue of decoupling reasoning from observations to improve efficiency in augmente",False
+long,494,200,3.627,2026-11-20T13:48:34.229659+00:00,1592,506,"Based on the provided context, here is a detailed explanation of the relevant papers and the proposed approach:
+
+**Papers and Approach:**
+
+1. [134 - G",False
+long,487,200,3.671,2026-11-20T13:48:37.902865+00:00,1767,484,"Here is a summary of the relevant papers in your collection and their key points:
+
+**Paper 1: ""SkillsBench: Benchmarking How Well Agent Skills Work Ac",False

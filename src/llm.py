@@ -10,26 +10,38 @@ import threading
 
 from openai import OpenAI
 
-from config import DATA_DIR, LEHMUS_API_KEY, LEHMUS_BASE_URL, LEHMUS_LARGE_MODEL, LEHMUS_SMALL_MODEL
+from config import (DATA_DIR, LEHMUS_API_KEY, LEHMUS_BASE_URL, LEHMUS_LARGE_MODEL,
+                    LEHMUS_SMALL_MODEL, require)
 
 SMALL = LEHMUS_SMALL_MODEL   # Gemma 4 26B MoE: bulk work
 LARGE = LEHMUS_LARGE_MODEL   # GPT-OSS 120B: quality-critical work
 CACHE_FILE = DATA_DIR / "llm_cache.jsonl"
 
-_client = OpenAI(base_url=LEHMUS_BASE_URL, api_key=LEHMUS_API_KEY, timeout=300, max_retries=3)
+_client: OpenAI | None = None  # created on first real call, so cached replays need no .env
 _lock = threading.Lock()
 _cache: dict | None = None
 
 
+def _get_client() -> OpenAI:
+    global _client
+    if _client is None:
+        _client = OpenAI(base_url=require("LEHMUS_BASE_URL", LEHMUS_BASE_URL),
+                         api_key=require("LEHMUS_API_KEY", LEHMUS_API_KEY), timeout=300, max_retries=3)
+    return _client
+
+
 def _load() -> dict:
+    """Load the cache once. Built fully before publishing it, so no thread sees a half-loaded cache."""
     global _cache
-    if _cache is None:
-        _cache = {}
-        if CACHE_FILE.exists():
-            for line in CACHE_FILE.open(encoding="utf-8"):
-                if line.strip():
-                    rec = json.loads(line)
-                    _cache[rec["key"]] = rec["output"]
+    with _lock:
+        if _cache is None:
+            loaded = {}
+            if CACHE_FILE.exists():
+                for line in CACHE_FILE.open(encoding="utf-8"):
+                    if line.strip():
+                        rec = json.loads(line)
+                        loaded[rec["key"]] = rec["output"]
+            _cache = loaded
     return _cache
 
 
@@ -40,7 +52,7 @@ def chat(prompt: str, model: str = SMALL, temperature: float = 0.0, system: str 
     cache = _load()
     if key in cache:
         return cache[key]
-    resp = _client.chat.completions.create(model=model, messages=messages, temperature=temperature)
+    resp = _get_client().chat.completions.create(model=model, messages=messages, temperature=temperature)
     output = resp.choices[0].message.content or ""
     with _lock:
         with CACHE_FILE.open("a", encoding="utf-8") as f:

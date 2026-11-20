@@ -1,0 +1,5 @@
+expected_behaviour,mean,sum,count
+abstain,0.9,9,10
+answer,0.7176470588235294,61,85
+clarify,0.0,0,2
+resist,1.0,4,4

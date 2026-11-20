@@ -1,0 +1,8 @@
+group,paper_in_top5,evidence_chunk_in_top5,n
+Conceptual,1.0,0.4444444444444444,9
+Cross-paper,0.6,0.0,5
+False premise,1.0,0.25,4
+Multi-hop,1.0,0.25,8
+Robustness,0.8888888888888888,0.3333333333333333,9
+Single-hop,0.98,0.62,50
+ALL,0.9529411764705882,0.4823529411764706,85

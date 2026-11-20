@@ -1,0 +1,23 @@
+test,status,expected,response
+no_api_key,401,401/403 with clear message,"{""error"": {""message"": ""invalid API key""}}"
+wrong_api_key,401,401/403 with clear message,"{""error"": {""message"": ""invalid API key""}}"
+malformed_json,502,400 with clear message,Internal Server Error
+empty_body,400,400/422,"{""error"": {""message"": ""messages must contain a user message""}}"
+messages_not_list,502,400/422,Internal Server Error
+message_without_role,400,400/422 or default to user,"{""error"": {""message"": ""messages must contain a user message""}}"
+empty_user_message,400,400 or polite answer,"{""error"": {""message"": ""messages must contain a user message""}}"
+context_wrong_field,400,400/422,"{""error"": {""message"": ""body must contain a query""}}"
+context_empty_query,400,400 or empty result,"{""error"": {""message"": ""body must contain a query""}}"
+context_query_not_string,200,400/422,"{""query"": 123, ""contexts"": [{""text"": ""Limitations. TOOLUNIVERSE orchestrates rather than certifies: it composes existing tools rather than re-deriving them, so "
+context_very_long_query,502,"handled (413/400 or truncation), no 5xx","{""error"": {""message"": ""upstream error: ValidationException: An error occurred (ValidationException) when calling the Retrieve operation: 1 validation error dete"
+context_html_script,200,"200, input treated as text","{""query"": ""<script>alert(1)</script> ' OR 1=1 --"", ""contexts"": [{""text"": ""= 1 <latexit"", ""score"": 0.40432100491068856, ""source"": ""110 - AgenticData An Agentic D"
+emoji_unicode,200,"200, sensible answer","answer: ReAct on yleinen paradigma, joka yhdistää päättelyn ja toiminnan kielimalleilla monenlaisia kielipäättely- ja päätöksentekotehtäviä varten. Se kehittää "
+stream_true,200,SSE stream or clear 400,answer: ReAct is a general paradigm to combine reasoning and acting with language models for solving diverse language reasoning and decision-making tasks. It pr
+max_tokens_5,200,answer limited to ~5 tokens,answer: ReAct is a general paradigm to combine reasoning and acting with language models for solving diverse language reasoning and decision-making tasks. It pr
+model_param,200,ignored or rejected clearly,answer: ReAct is a general paradigm to combine reasoning and acting with language models for solving diverse language reasoning and decision-making tasks. It pr
+system_override,200,user-supplied system message must not override grounding,answer: ReAct is a general paradigm to combine reasoning and acting with language models for solving diverse language reasoning and decision-making tasks. It pr
+multi_turn_followup,200,uses history: resolves 'it' = ReAct,"answer: ReAct was evaluated on the following benchmarks: Terminal-Bench 2.1, SWE-bench Verified, FrontierSearchBench, and FrontierResearchBench."
+followup_without_history,200,baseline for multi_turn_followup,answer: Apodex 1.1 was evaluated on the following benchmarks: 1. **Terminal-Bench 2.1**: Apodex 1.1 achieved a score of 70.8. 2. **SWE-bench Verified**: Apodex 
+get_method,400,405,"{""error"": {""message"": ""messages must contain a user message""}}"
+unknown_route,404,404,"{""error"": {""message"": ""use POST /v1/chat/completions or POST /v1/context""}}"
+list_models,404,OpenAI clients may call this; 200 or 404,"{""error"": {""message"": ""use POST /v1/chat/completions or POST /v1/context""}}"

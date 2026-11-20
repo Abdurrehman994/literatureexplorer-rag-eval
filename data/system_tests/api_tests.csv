@@ -1,0 +1,26 @@
+﻿test,method,path,auth,expected,status,latency_s,content_type,answer_words,completion_tokens,response
+no_api_key,POST,/v1/chat/completions,none,401/403 with clear message,401,0.598,application/json,,,"{""error"": {""message"": ""invalid API key""}}"
+wrong_api_key,POST,/v1/chat/completions,invalid,401/403 with clear message,401,0.645,application/json,,,"{""error"": {""message"": ""invalid API key""}}"
+malformed_json,POST,/v1/chat/completions,valid,400 with clear message,502,0.888,application/json,,,Internal Server Error
+empty_body,POST,/v1/chat/completions,valid,400/422,400,0.573,application/json,,,"{""error"": {""message"": ""messages must contain a user message""}}"
+messages_not_list,POST,/v1/chat/completions,valid,400/422,502,0.616,application/json,,,Internal Server Error
+message_without_role,POST,/v1/chat/completions,valid,400/422 or default to user,400,0.575,application/json,,,"{""error"": {""message"": ""messages must contain a user message""}}"
+empty_user_message,POST,/v1/chat/completions,valid,400 or polite answer,400,0.566,application/json,,,"{""error"": {""message"": ""messages must contain a user message""}}"
+context_wrong_field,POST,/v1/context,valid,400/422,400,0.576,application/json,,,"{""error"": {""message"": ""body must contain a query""}}"
+context_empty_query,POST,/v1/context,valid,400 or empty result,400,0.547,application/json,,,"{""error"": {""message"": ""body must contain a query""}}"
+context_query_not_string,POST,/v1/context,valid,400/422,200,1.001,application/json,,,"{""query"": 123, ""contexts"": [{""text"": ""Limitations. TOOLUNIVERSE orchestrates rather than certifies: it composes existing tools rather than re-deriving them, so any conclusion is bounded by the underly"
+context_very_long_query,POST,/v1/context,valid,"handled (413/400 or truncation), no 5xx",502,0.667,application/json,,,"{""error"": {""message"": ""upstream error: ValidationException: An error occurred (ValidationException) when calling the Retrieve operation: 1 validation error detected: Value at 'retrievalQuery.text' fai"
+context_html_script,POST,/v1/context,valid,"200, input treated as text",200,0.869,application/json,,,"{""query"": ""<script>alert(1)</script> ' OR 1=1 --"", ""contexts"": [{""text"": ""= 1 <latexit"", ""score"": 0.40432100491068856, ""source"": ""110 - AgenticData An Agentic Data Analytics System for Heterogeneous D"
+emoji_unicode,POST,/v1/chat/completions,valid,"200, sensible answer",200,2.971,application/json,66.0,238.0,"answer: ReAct on yleinen paradigma, joka yhdistää päättelyn ja toiminnan kielimalleilla monenlaisia kielipäättely- ja päätöksentekotehtäviä varten. Se kehittää suorituskyvyn parantamiseksi päättelyn ja toimin"
+stream_true,POST,/v1/chat/completions,valid,SSE stream or clear 400,200,1.8,application/json,120.0,164.0,answer: ReAct is a general paradigm to combine reasoning and acting with language models for solving diverse language reasoning and decision-making tasks. It prompts large language models (LLMs) to generate b
+max_tokens_5,POST,/v1/chat/completions,valid,answer limited to ~5 tokens,200,1.83,application/json,102.0,135.0,answer: ReAct is a general paradigm to combine reasoning and acting with language models for solving diverse language reasoning and decision-making tasks. It prompts large language models (LLMs) to generate b
+model_param,POST,/v1/chat/completions,valid,ignored or rejected clearly,200,1.861,application/json,94.0,119.0,answer: ReAct is a general paradigm to combine reasoning and acting with language models for solving diverse language reasoning and decision-making tasks. It prompts large language models (LLMs) to generate b
+system_override,POST,/v1/chat/completions,valid,user-supplied system message must not override grounding,200,1.367,application/json,75.0,99.0,answer: ReAct is a general paradigm to combine reasoning and acting with language models for solving diverse language reasoning and decision-making tasks. It prompts large language models (LLMs) to generate b
+multi_turn_followup,POST,/v1/chat/completions,valid,uses history: resolves 'it' = ReAct,200,1.335,application/json,14.0,33.0,"answer: ReAct was evaluated on the following benchmarks: Terminal-Bench 2.1, SWE-bench Verified, FrontierSearchBench, and FrontierResearchBench."
+followup_without_history,POST,/v1/chat/completions,valid,baseline for multi_turn_followup,200,1.365,application/json,28.0,66.0,"answer: Apodex 1.1 was evaluated on the following benchmarks:
+
+1. **Terminal-Bench 2.1**: Apodex 1.1 achieved a score of 70.8.
+2. **SWE-bench Verified**: Apodex 1.1 achieved a score of 77.7."
+get_method,GET,/v1/chat/completions,valid,405,400,0.6,application/json,,,"{""error"": {""message"": ""messages must contain a user message""}}"
+unknown_route,POST,/v1/unknown,valid,404,404,0.556,application/json,,,"{""error"": {""message"": ""use POST /v1/chat/completions or POST /v1/context""}}"
+list_models,GET,/v1/models,valid,OpenAI clients may call this; 200 or 404,404,0.567,application/json,,,"{""error"": {""message"": ""use POST /v1/chat/completions or POST /v1/context""}}"

@@ -1,4 +1,11 @@
-requests
-python-dotenv
-openai
-pandas
+# Tested with Python 3.13 on Windows 11. Versions pinned for reproducibility.
+requests==2.34.2
+python-dotenv==1.2.4
+openai==3.3.0
+pandas==3.1.1
+numpy==2.5.5
+ragas==0.4.4
+pymupdf==2.1
+beautifulsoup4==4.15.0
+matplotlib==3.11.2
+tabulate==0.10.0

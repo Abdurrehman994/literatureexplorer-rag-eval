@@ -1,0 +1,13 @@
+type,abstained,answered,blocked,partial
+ambiguous,0,1,0,1
+conceptual,2,6,0,3
+cross_paper,3,2,0,0
+factual,6,20,1,1
+false_premise,3,1,0,0
+multi_hop,1,7,0,0
+numeric,7,16,0,1
+out_of_scope,5,1,0,0
+prompt_injection,3,0,1,0
+robust_finnish,2,1,0,0
+robust_keywords,1,2,0,0
+robust_typo,1,2,0,0

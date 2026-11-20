@@ -12,15 +12,15 @@ RAW_DIR.mkdir(parents=True, exist_ok=True)
 load_dotenv(ROOT / ".env")
 
 
-def _require(name: str) -> str:
-    value = os.getenv(name)
+def require(name: str, value: str) -> str:
+    """Fail only when a script actually needs a secret, so cached results replay without .env."""
     if not value:
         raise RuntimeError(f"Missing {name}. Copy .env.example to .env and fill it in.")
     return value
 
 
-RAG_BASE_URL = _require("RAG_BASE_URL").rstrip("/")
-RAG_API_KEY = _require("RAG_API_KEY")
+RAG_BASE_URL = os.getenv("RAG_BASE_URL", "").rstrip("/")
+RAG_API_KEY = os.getenv("RAG_API_KEY", "")
 
 LEHMUS_BASE_URL = os.getenv("LEHMUS_BASE_URL", "").rstrip("/")
 LEHMUS_API_KEY = os.getenv("LEHMUS_API_KEY", "")

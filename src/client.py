@@ -18,7 +18,7 @@ from datetime import datetime, timezone
 
 import requests
 
-from config import RAG_API_KEY, RAG_BASE_URL, RAW_DIR
+from config import RAG_API_KEY, RAG_BASE_URL, RAW_DIR, require
 
 CACHE_FILE = RAW_DIR / "endpoint_cache.jsonl"
 MAX_PARALLEL = 2
@@ -32,15 +32,18 @@ _cache: dict | None = None
 
 
 def _load_cache() -> dict:
+    """Load the cache once. Built fully before publishing it, so no thread sees a half-loaded cache."""
     global _cache
-    if _cache is None:
-        _cache = {}
-        if CACHE_FILE.exists():
-            with CACHE_FILE.open(encoding="utf-8") as f:
-                for line in f:
-                    if line.strip():
-                        rec = json.loads(line)
-                        _cache[rec["key"]] = rec  # later lines win (refresh)
+    with _file_lock:
+        if _cache is None:
+            loaded = {}
+            if CACHE_FILE.exists():
+                with CACHE_FILE.open(encoding="utf-8") as f:
+                    for line in f:
+                        if line.strip():
+                            rec = json.loads(line)
+                            loaded[rec["key"]] = rec  # later lines win (refresh)
+            _cache = loaded
     return _cache
 
 
@@ -91,6 +94,8 @@ def request(method: str, path: str, body=None, *, auth: str = "valid",
     if not refresh and key in cache:
         return cache[key]
 
+    require("RAG_BASE_URL", RAG_BASE_URL)
+    require("RAG_API_KEY", RAG_API_KEY)
     headers = _headers(auth, extra_headers)
     attempts = []
     with _semaphore:
