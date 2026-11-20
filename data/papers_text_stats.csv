@@ -1,0 +1,31 @@
+doc_id,title,format,pages,words,empty_pages
+10,Measuring AI agent autonomy in practice,html,10,5893,0
+12,A warning about ‘model welfare’,html,11,6488,0
+17,ReAct: Synergizing Reasoning and Acting in Language Models,pdf,33,17089,0
+20,When combinations of humans and AI are useful: A systematic review and meta-analysis,pdf,14,10077,3
+28,Precise Zero-Shot Dense Retrieval without Relevance Labels,pdf,11,6014,0
+40,RAAS: LLM Agentic System Architecture Search with GRPO,pdf,10,5837,0
+41,ReWOO: Decoupling Reasoning from Observations for Efficient Augmented Language Models,pdf,25,12387,0
+47,AgentBreeder: Mitigating the AI Safety Risks of Multi-Agent Scaffolds via Self-Improvement,pdf,31,13643,0
+57,HERMES: Towards Efficient and Verifiable Mathematical Reasoning in LLMs,pdf,25,13155,0
+61,Stop Wasting Your Tokens: Towards Efficient Runtime Multi-Agent Systems,pdf,32,15047,0
+65,DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines,pdf,32,16385,0
+77,Agent Hospital: A Simulacrum of Hospital with Evolvable Medical Agents,pdf,29,13400,0
+79,Modeling Earth-Scale Human-Like Societies with One Billion Agents,pdf,46,14606,1
+82,The Anatomy of a Personal Health Agent,pdf,148,53746,4
+92,Reimagining research papers as interactive and reliable AI agents,pdf,18,11431,3
+93,Can AI agents conduct open-ended AI research? Early evidence from two case studies,pdf,35,17565,0
+97,Clarus: Coordinating Autonomous Research Agents toward Web-Scale Scientific Collaboration,pdf,28,14208,0
+103,Answering Developer Questions with Annotated Agent-Discovered Program Traces,pdf,14,13600,0
+108,IdeaScientist: Orchestrating Agents for Grounded Scientific Ideation,pdf,36,18557,0
+127,Synthetic Arabic Medical Dialogues Using Advanced Multi-Agent LLM Techniques,pdf,16,7394,1
+129,The potential existential threat of large language models to online survey research,pdf,10,9703,0
+134,G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment,pdf,11,6002,0
+142,SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks,pdf,42,17758,0
+143,AstaBench: Rigorous Benchmarking of AI Agents with a Scientific Research Suite,pdf,88,42094,0
+149,Magentic Marketplace: An Open-Source Environment for Studying Agentic Markets,pdf,19,9770,0
+166,Claudini: Autoresearch Discovers State-of-the-Art Adversarial Attack Algorithms for LLMs,pdf,28,13195,0
+168,AI Agents Enable Adaptive Computer Worms,pdf,49,24958,0
+172,Ethical Coordination of LLM Multi-Agent Systems,pdf,26,12340,0
+176,Emergence of human-like polarization among large language model agents,pdf,72,27607,1
+183,We need a new ethics for a world of AI agents,html,5,2689,0

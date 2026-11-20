@@ -1,0 +1,31 @@
+doc_id,Num,Title,URL,Category,source_file_prefix,stratum
+10,10,Measuring AI agent autonomy in practice,https://www.anthropic.com/research/measuring-agent-autonomy,Fundamentals,010 - ,Fundamentals
+12,12,A warning about ‘model welfare’,https://mustafa-suleyman.ai/a-warning-about-model-welfare,Fundamentals,012 - ,Fundamentals
+17,17,ReAct: Synergizing Reasoning and Acting in Language Models,https://arxiv.org/abs/2210.03629,Prompt Engineering/Context Engineering,017 - ,Prompt Engineering/Context Engineering
+20,20,When combinations of humans and AI are useful: A systematic review and meta-analysis,https://doi.org/10.1038/s41562-024-02024-1,(Design for) Human-AI Interaction,020 - ,(Design for) Human-AI Interaction
+28,28,Precise Zero-Shot Dense Retrieval without Relevance Labels,https://arxiv.org/pdf/2212.10496,Retrieval-Augmented Generation,028 - ,Retrieval-Augmented Generation
+40,40,RAAS: LLM Agentic System Architecture Search with GRPO,https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_RAAS_LLM_Agentic_System_Architecture_Search_with_GRPO_CVPR_2026_paper.pdf,Building Agents,040 - ,Building Agents
+41,41,ReWOO: Decoupling Reasoning from Observations for Efficient Augmented Language Models,https://arxiv.org/abs/2305.18323,Building Agents,041 - ,Building Agents
+47,47,AgentBreeder: Mitigating the AI Safety Risks of Multi-Agent Scaffolds via Self-Improvement,https://arxiv.org/abs/2502.00757 ,Self-improvement/Evolution,047 - ,Self-improvement/Evolution
+57,57,HERMES: Towards Efficient and Verifiable Mathematical Reasoning in LLMs,https://arxiv.org/abs/2511.18760,Building Agents,057 - ,Building Agents
+61,61,Stop Wasting Your Tokens: Towards Efficient Runtime Multi-Agent Systems,https://arxiv.org/abs/2510.26585,Building Agents,061 - ,Building Agents
+65,65,DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines,https://arxiv.org/abs/2310.03714,AI Agent Frameworks,065 - ,AI Agent Frameworks
+77,77,Agent Hospital: A Simulacrum of Hospital with Evolvable Medical Agents,https://arxiv.org/abs/2405.02957,Applications: Simulations,077 - ,Applications: Simulations
+79,79,Modeling Earth-Scale Human-Like Societies with One Billion Agents,https://arxiv.org/abs/2506.12078,Applications: Simulations,079 - ,Applications: Simulations
+82,82,The Anatomy of a Personal Health Agent,https://arxiv.org/abs/2508.20148,Applications: Healthcare,082 - ,Applications: other
+92,92,Reimagining research papers as interactive and reliable AI agents,https://www.nature.com/articles/s41586-026-11044-y,Applications: Science,092 - ,Applications: Science
+93,92,Can AI agents conduct open-ended AI research? Early evidence from two case studies,https://arxiv.org/abs/2607.27191,Applications: Science,093 - ,Applications: Science
+97,96,Clarus: Coordinating Autonomous Research Agents toward Web-Scale Scientific Collaboration,https://arxiv.org/abs/2606.30246,Applications: Science,097 - ,Applications: Science
+103,102,Answering Developer Questions with Annotated Agent-Discovered Program Traces,https://dl.acm.org/doi/10.1145/3746059.3747652,Applications: Software Development,103 - ,Applications: Software Development
+108,107,IdeaScientist: Orchestrating Agents for Grounded Scientific Ideation,https://arxiv.org/abs/2610.04074,Applications: Science,108 - ,Applications: Science
+127,126,Synthetic Arabic Medical Dialogues Using Advanced Multi-Agent LLM Techniques,https://aclanthology.org/2024.arabicnlp-1.2/,Applications: Healthcare,127 - ,Applications: other
+129,128,The potential existential threat of large language models to online survey research,https://www.pnas.org/doi/10.1073/pnas.2518075122,Applications: Survey Research,129 - ,Applications: other
+134,133,G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment,https://arxiv.org/abs/2303.16634,Evaluating Agents,134 - ,Evaluating Agents
+142,141,SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks,https://arxiv.org/abs/2602.12670,Evaluating Agents,142 - ,Evaluating Agents
+143,142,AstaBench: Rigorous Benchmarking of AI Agents with a Scientific Research Suite,https://arxiv.org/abs/2510.21652,Evaluating Agents,143 - ,Evaluating Agents
+149,148,Magentic Marketplace: An Open-Source Environment for Studying Agentic Markets,https://arxiv.org/abs/2510.25779,Evaluating Agents,149 - ,Evaluating Agents
+166,165,Claudini: Autoresearch Discovers State-of-the-Art Adversarial Attack Algorithms for LLMs,https://arxiv.org/abs/2603.24511 ,Challenges: Safety and Security,166 - ,Challenges: Safety and Security
+168,167,AI Agents Enable Adaptive Computer Worms,https://arxiv.org/abs/2606.03811,Challenges: Safety and Security,168 - ,Challenges: Safety and Security
+172,171,Ethical Coordination of LLM Multi-Agent Systems,https://www.mdpi.com/2079-9292/15/11/2278,Challenges: Other,172 - ,Challenges: Other
+176,175,Emergence of human-like polarization among large language model agents,https://arxiv.org/abs/2501.05171,Emergent Abilities and World Models,176 - ,Emergent Abilities and World Models
+183,182,We need a new ethics for a world of AI agents,https://www.nature.com/articles/d41586-025-02454-5,Ethics,183 - ,Other

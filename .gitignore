@@ -10,6 +10,8 @@ __pycache__/
 # Large source files (download separately, see README)
 papers/
 papers.zip
+# full text of the papers (copyrighted; regenerate with fetch_papers.py + extract_texts.py)
+data/papers_text/
 
 # Office lock files
 ~$*
