@@ -1,0 +1,15 @@
+# Secrets (assignment-2.md contains the API URLs and keys)
+.env
+assignment-2.md
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Large source files (download separately, see README)
+papers/
+papers.zip
+
+# Office lock files
+~$*
